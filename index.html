@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar Ubaid Nazir</title>
+
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="header.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            width: 100%;
+            max-height: 450px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container img {
+            width: 33%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: all .4s;
+
+        }
+
+        .container img:hover {
+            transform: rotate(15deg) scale(1.1);
+            border-radius: 40px;
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.192);
+        }
+
+        @media only screen and (max-width: 500px) {
+            .container {
+                width: 100%;
+                max-height: 450px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .container img {
+                width: 46%;
+                cursor: pointer;
+                opacity: 0.5;
+                transition: all .4s;
+
+            }
+
+            .container img:hover {
+                transform: rotate(15deg) scale(1.1);
+                border-radius: 40px;
+                opacity: 1;
+                z-index: 10;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.192);
+            }
+
+            .contact {
+                margin-top: 100px;
+            }
+        }
+
+        .dark {
+            background-color: #222;
+            color: #e6e6e6;
+
+
+        }
+
+        .htm {
+            filter: invert(1) hue-rotate(180deg);
+
+        }
+
+        .mode {
+
+            color: black;
+            font-size: large;
+        }
+
+        .try {
+            top: -1881px;
+        }
+
+        .color {
+            color: green;
+        }
+
+        .main .active {
+            background-color: grey;
+            color: white;
+
+        }
+
+        .main a {
+            font-size: 1.5rem;
+        }
+
+        .buttons {
+            padding: 15px 25px;
+            font-size: 15px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            position: relative;
+            left: 0;
+            top: -50px;
+        }
+
+        .buttons:hover {
+            background-color: #3e8e41
+        }
+
+        .buttons:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .container {
+            background-size: cover;
+            background: rgb(226, 226, 226);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(226, 226, 226, 1)), color-stop(50%, rgba(219, 219, 219, 1)), color-stop(51%, rgba(209, 209, 209, 1)), color-stop(100%, rgba(254, 254, 254, 1)));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0);
+            /* IE6-9 */
+            padding: 20px;
+            position: relative;
+            top: 70px;
+        }
+
+        .led-box {
+            height: 30px;
+            width: 25%;
+            margin: 10px 0;
+            float: left;
+        }
+
+        .led-box p {
+            font-size: 12px;
+            text-align: center;
+            margin: 1em;
+        }
+
+        .led-red {
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            background-color: #F00;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+            -webkit-animation: blinkRed 0.5s infinite;
+            -moz-animation: blinkRed 0.5s infinite;
+            -ms-animation: blinkRed 0.5s infinite;
+            -o-animation: blinkRed 0.5s infinite;
+            animation: blinkRed 0.5s infinite;
+        }
+
+        @-webkit-keyframes blinkRed {
+            from {
+                background-color: #F00;
+            }
+
+            50% {
+                background-color: #A00;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+            }
+
+            to {
+                background-color: #F00;
+            }
+        }
+
+        @-moz-keyframes blinkRed {
+            from {
+                background-color: #F00;
+            }
+
+            50% {
+                background-color: #A00;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+            }
+
+            to {
+                background-color: #F00;
+            }
+        }
+
+        @-ms-keyframes blinkRed {
+            from {
+                background-color: #F00;
+            }
+
+            50% {
+                background-color: #A00;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+            }
+
+            to {
+                background-color: #F00;
+            }
+        }
+
+        @-o-keyframes blinkRed {
+            from {
+                background-color: #F00;
+            }
+
+            50% {
+                background-color: #A00;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+            }
+
+            to {
+                background-color: #F00;
+            }
+        }
+
+        @keyframes blinkRed {
+            from {
+                background-color: #F00;
+            }
+
+            50% {
+                background-color: #A00;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;
+            }
+
+            to {
+                background-color: #F00;
+            }
+        }
+
+        .led-yellow {
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            background-color: #FF0;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+            -webkit-animation: blinkYellow 1s infinite;
+            -moz-animation: blinkYellow 1s infinite;
+            -ms-animation: blinkYellow 1s infinite;
+            -o-animation: blinkYellow 1s infinite;
+            animation: blinkYellow 1s infinite;
+        }
+
+        @-webkit-keyframes blinkYellow {
+            from {
+                background-color: #FF0;
+            }
+
+            50% {
+                background-color: #AA0;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+            }
+
+            to {
+                background-color: #FF0;
+            }
+        }
+
+        @-moz-keyframes blinkYellow {
+            from {
+                background-color: #FF0;
+            }
+
+            50% {
+                background-color: #AA0;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+            }
+
+            to {
+                background-color: #FF0;
+            }
+        }
+
+        @-ms-keyframes blinkYellow {
+            from {
+                background-color: #FF0;
+            }
+
+            50% {
+                background-color: #AA0;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+            }
+
+            to {
+                background-color: #FF0;
+            }
+        }
+
+        @-o-keyframes blinkYellow {
+            from {
+                background-color: #FF0;
+            }
+
+            50% {
+                background-color: #AA0;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+            }
+
+            to {
+                background-color: #FF0;
+            }
+        }
+
+        @keyframes blinkYellow {
+            from {
+                background-color: #FF0;
+            }
+
+            50% {
+                background-color: #AA0;
+                box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0;
+            }
+
+            to {
+                background-color: #FF0;
+            }
+        }
+
+        .led-green {
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            background-color: #ABFF00;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+        }
+
+        .led-blue {
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            background-color: #24E0FF;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+        }
+    </style>
+    <meta name="description" content="Love To Explore Things Logically ! Official WebPage of Dar Ubaid Nazir, B.Tech(C.S.E) 3rd Year Student, Intermediate-Level Programmer, BlockChain Developer ,Full Stack Web Developer,(B) Android Native Developer.">
+</head>
+</head>
+
+
+<body>
+
+
+
+    <div class="main">
+        <nav class="navigation">
+            <ul>
+                <li class="user"><a style="color:black;background:white;" href="#"><i class="fas fa-home"></i>Dar Ubaid Nazir</a></li>
+                <li class="user"><a href="#about"><i class="fas fa-address-card"></i>About me</a></li>
+                <li class="user"><a href="#education"><i class="fas fa-school"></i>Education</a></li>
+                <li class="user"><a href="#portfolio"><i class="fas fa-images"></i>Shoot</a></li>
+                
+
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="home" id="home">
+
+        <h3>HI THERE !</h3>
+        <h1>I'M <span>Dar Ubaid Nazir</span></h1>
+        <p><span style="color: yellowgreen;
+        font-size: large;
+        font-family: fantasy;
+        background-color: black;
+        padding: 11px;
+    ">Love to explore things logically</span></p>
+        <p>I'm B.Tech(C.S.E) 3rd Year Student, <br> Intermediate-level Programmer. <br> Decentralized Developer - BlockChain <br>A Full Stack Web Developer.<br>(B) Android Native Developer. </p>
+        <a href="#about"><button class="btn">About Me <i class="fas fa-user"></i></button></a>
+    </section>
+
+    <!-- Home Section Ends -->
+
+    <!-- About Section Starts -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"><span>About</span> Me</h1>
+
+        <div class="row">
+            <div class="info">
+                <h3><span>Name: </span>ZAMIN AHMAD DAR</h3>
+                <h3><span>Education: </span>Computer Science Student!</h3>
+                <h3><span>Post: </span>Full Stack Developer <br> Intermediate-level Programmer.<br>(B) Android Native Developer!</h3>
+                <h3><span>Language: </span>English,Kashmiri,Urdu</h3>
+                <!--   <a href="#">
+                <button class="btn">Download CV <i class="fas fa-download"></i></button>
+            </a>-->
+            </div>
+
+            <div class="counter">
+
+                <div class="box">
+
+                    <span><a href="https://facebook.com/profile.php?id=100070737476463" target="_blank"> <img src="social/facebook.png" alt="Facebook" width="100%" height="100%"> Facebook </a></span>
+
+                </div>
+                <div class="box">
+                    <span><a href="https://instagram.com/darubaidnazir" target="_blank"> <img src="social/instagram.jpg" alt="Instagram" width="100%" height="100%"> Instagram </a></span>
+                </div>
+                <div class="box">
+                    <span><a href="https://github.com/darubaidnazir" target="_blank"> <img src="social/github.gif" alt="Github" width="100%" height="100%"> Github </a></span>
+                </div>
+                <div class="box">
+                    <span><a href="https://in.linkedin.com/in/dar-ubaid-nazir-144582179" target="_blank"> <img src="social/in.png" alt="linkedin" width="100%" height="100%">linkedin </a></span>
+                </div>
+                <div class="box">
+                    <span><a href="https://twitter.com/darubaidnazir" target="_blank"> <img src="social/twitter.jpg" alt="twitter" width="100%" height="100%"> Twitter </a></span>
+                </div>
+
+            </div>
+        </div>-->
+    </section>
+
+    <!-- About Section Ends -->
+
+    <!-- Education Section Starts -->
+
+    <section class="education" id="education">
+        <h1 class="heading">My <span>Education</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2018-2022</span>
+                <h3>University </h3>
+                <p>Pursuing, Bachelor of Technology (BTech) in Computer Science and Engineering at University Of Kashmir North Campus</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2016-2017</span>
+                <h3>High School</h3>
+                <p>Completed 12th at Hista Hr Secondary School Anantnag.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2005-2015</span>
+                <h3>Mid-level Schooling</h3>
+                <p>Completed 10th at St Luke's Convent School Anantnag</p>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Education Section Ends -->
+
+    <!-- Portfolio Section Starts -->
+
+    <section class="portfolio" id="portfolio">
+        <h1 class="heading">My <span>Shoot's</span></h1>
+
+        <div class="container">
+            <img src="images/5.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+            <img src="images/2.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+            <img src="images/3.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+            <img src="images/4.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+            <img src="images/1.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+            <img src="images/6.jpg" alt="Dar Ubaid Nazir" title="Dar Ubaid Nazir's Picture Collection" />
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- Portfolio Section Ends -->
+
+    <!-- Contact Section Starts 
+
+    <section class="contact" id="contact" style="margin-top:450px;">
+
+        <h1 class="heading"> <span>contact</span> me </h1>
+
+        <div class="row">
+
+            <div class="content">
+
+                <h3 class="title">contact info</h3>
+
+                <div class="info">
+                    <h3> <i class="fas fa-envelope"></i> <a href="mailto:zaminahmaddar2614@gmail.com">zaminahmaddar2614@gmail.com</a> </h3>
+                    <h3> <i class="fas fa-phone"></i> +919622945862 </h3>
+                    <h3> <i class="fas fa-map-marker-alt"></i> KUNZER BARAMULLA, India - 193121 </h3>
+                </div>
+
+            </div>
+
+            <form action="">
+
+                <input type="text" placeholder="name" class="box" required disabled>
+                <input type="email" placeholder="email" class="box" required disabled>
+                <input type="text" placeholder="project" class="box" required disabled>
+                <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message" required disabled></textarea>
+                <button type="submit" class="btn"> send <i class="fas fa-paper-plane" disabled></i> </button>
+
+            </form>
+
+        </div>
+    </section>
+    -->
+    <pre>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+</pre>
+    <footer id="footer">
+
+
+    </footer>
+   
+    <!-- Contact Section Ends -->
+
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+</body>
+<script>
+    const currentLoaction = location.href;
+    const menuitem = document.querySelectorAll('a');
+    const menulength = menuitem.length
+    for (let i = 0; i < menulength; i++) {
+        if (menuitem[i].href === currentLoaction) {
+            menuitem[i].className = "active"
+        }
+    }
+</script>
+
+</html>
