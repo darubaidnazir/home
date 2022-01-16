@@ -15,22 +15,7 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .container {
-            width: 100%;
-            max-height: 450px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .container img {
-            width: 33%;
-            cursor: pointer;
-            opacity: 0.5;
-            transition: all .4s;
-
-        }
+       
 
         .container img:hover {
             transform: rotate(15deg) scale(1.1);
@@ -48,6 +33,15 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+            }
+            #instafeed-container img:hover {
+                transform: rotate(15deg) scale(1.1);
+                border-radius: 30%;
+                opacity: 1;
+                z-index: 10;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.192);
+                width:60%;
+                height: 60%;
             }
 
             .container img {
@@ -152,8 +146,18 @@
   
     border-color: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 94%);
  
+        }
+    #instafeed-container img:hover {
+                transform: rotate(15deg) scale(1.1);
+                border-radius: 30%;
+                opacity: 1;
+                z-index: 10;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.192);
+                width:20%;
+                height: 20%;
+            }
 
-		}
+		
         .buttons:hover {
             background-color: #3e8e41
         }
@@ -557,7 +561,7 @@
 	<h1 class="heading">InstaGram <span>Feed</span></h1>
     <h6 style="color:black; text-align: center; font-size: larger;">Image's are fetched from Instagram account  <span>Click to view the post</span></h6>
  
-    <div id="instafeed-container" >
+    <div id="instafeed-container">
 
 </div>
 <pre>
