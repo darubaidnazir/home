@@ -51,10 +51,21 @@
             }
 
             .container img {
-                width: 46%;
-                cursor: pointer;
-                opacity: 0.5;
-                transition: all .4s;
+                border-radius:30%;
+            margin: 20px;
+			width: 25%;
+            margin: 20px;
+	height: calc(150px + 6vw);
+	width: calc(150px + 6vw);
+	border: calc(8px + 0.2vw) solid transparent;
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  
+    border-color: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 94%);
+ 
 
             }
 
@@ -123,6 +134,26 @@
             top: -50px;
         }
 
+
+        #instafeed-container img{ 
+
+            border-radius: 50% 10%;
+            margin: 20px;
+			width: 25%;
+            margin: 20px;
+	height: calc(150px + 6vw);
+	width: calc(150px + 6vw);
+	border: calc(8px + 0.2vw) solid transparent;
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  
+    border-color: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 94%);
+ 
+
+		}
         .buttons:hover {
             background-color: #3e8e41
         }
@@ -364,6 +395,13 @@
             border-radius: 50%;
             box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
         }
+
+
+
+   
+
+
+
     </style>
     <meta name="description" content="Love To Explore Things Logically ! Official WebPage of Dar Ubaid Nazir, B.Tech(C.S.E) 3rd Year Student, Intermediate-Level Programmer, BlockChain Developer ,Full Stack Web Developer,(B) Android Native Developer.">
 </head>
@@ -595,6 +633,25 @@
 
 
     </footer>
+    
+	
+	<h1 class="heading">InstaGram <span>Feed</span></h1>
+ 
+    <div id="instafeed-container" >
+
+</div>
+
+
+	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+	<script type="text/javascript">
+	var userFeed = new Instafeed({
+		get: 'user',
+		target: "instafeed-container",
+    	resolution: 'low_resolution',
+		accessToken: 'IGQVJVMDg3NHFtbFRUNFJMbjVmY01QYXRRNkRSQWNuWXF6cXRTcE05XzhSMGZA4U2QyQzF5LVNNd0dMeW5ydG54RU53ZAmVDSkxFS2ZA6ZAGFwNEc2TzRXc09uRUhSMVVpOThXV0dQRDluLUw2UHkwMmlaeQZDZD'
+	});
+	userFeed.run();
+	</script>
    
     <!-- Contact Section Ends -->
 
