@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+	 <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dar Ubaid Nazir</title>
@@ -630,17 +641,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- custom js file link  -->
-	 <script>
-      document.onreadystatechange = function () {
-        if (document.readyState !== "complete") {
-          document.querySelector("body").style.visibility = "hidden";
-          document.querySelector("#loader").style.visibility = "visible";
-        } else {
-          document.querySelector("#loader").style.display = "none";
-          document.querySelector("body").style.visibility = "visible";
-        }
-      };
-    </script>
+	
 	
     <script src="script.js"></script>
 
