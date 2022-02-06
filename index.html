@@ -6,9 +6,9 @@
       document.onreadystatechange = function () {
         if (document.readyState !== "complete") {
           document.querySelector("body").style.visibility = "hidden";
-          document.querySelector("#loader").style.visibility = "visible";
+          document.querySelector(".loading").style.visibility = "visible";
         } else {
-          document.querySelector("#loader").style.display = "none";
+          document.querySelector(".loading").style.display = "none";
           document.querySelector("body").style.visibility = "visible";
         }
       };
@@ -27,34 +27,37 @@
     <link rel="stylesheet" href="style.css">
     <style>
 	    
-	
+        @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
 	    body{
 		    visibility: hidden;
+          
 	    }
-	     #loader {
-     position: absolute;
-    display: block;
-    margin:20% 20%;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
-  border-left: 16px solid pink;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+	    
+.loading {
+  display: flex;
+  color: green;
+  justify-content: center;
+  margin: 20%;
+  font-size: 4em;
+  font-family: "Baloo Bhaijaan", cursive;
+  text-transform: uppercase;
+}
+.loading span {
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px rgba(0, 0, 0, 0.1),
+    0 3px rgba(0, 0, 0, 0.1), 0 4px rgba(0, 0, 0, 0.1), 0 5px rgba(0, 0, 0, 0.1),
+    0 6px transparent, 0 7px transparent, 0 8px transparent, 0 9px transparent,
+    0 10px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  animation: bounce 0.5s ease infinite alternate;
 }
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes bounce {
+  to {
+    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb,
+      0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb,
+      0 50px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+  }
 }
         .container img:hover {
             transform: rotate(15deg) scale(1.1);
@@ -462,9 +465,19 @@
 
 
 <body>
-	
+    <div class="loading">Loading</div>
 
- <div id="loader" ></div>
+    <script> 
+    let loading = document.querySelector(".loading");
+let letters = loading.textContent.split("");
+loading.textContent = "";
+letters.forEach((letter, i) => {
+  let span = document.createElement("span");
+  span.textContent = letter;
+  span.style.animationDelay = `${i / 10}s`;
+  loading.append(span);
+});
+    </script>
     <div class="main">
         <nav class="navigation">
             <ul>
