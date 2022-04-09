@@ -2,17 +2,7 @@
 <html lang="en">
 
 <head>
-	 <script>
-      document.onreadystatechange = function () {
-        if (document.readyState !== "complete") {
-          document.querySelector("body").style.visibility = "hidden";
-          document.querySelector(".loading").style.visibility = "visible";
-        } else {
-          document.querySelector(".loading").style.display = "none";
-          document.querySelector("body").style.visibility = "visible";
-        }
-      };
-    </script>
+	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dar Ubaid Nazir</title>
@@ -26,39 +16,360 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
     <style>
-	    
-        @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
-	    body{
-		    visibility: hidden;
-          
-	    }
-	    
-.loading {
-  display: flex;
-  color: green;
-  justify-content: center;
+	   
+	.homesection{
+        display:none;
+    }
+    @import url("https://fonts.googleapis.com/css?family=Exo:300");
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-	padding:15px;
-	
-	text-shadow: 17px 17px;
-	
-  margin: 20%;
-  font-size: 6em;
-  font-family: "Baloo Bhaijaan", cursive;
-  text-transform: uppercase;
-	body{
-		  background: rgb(209, 209, 209);
-	}
-}
-.loading span {
-  text-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px rgba(0, 0, 0, 0.1),
-    0 3px rgba(0, 0, 0, 0.1), 0 4px rgba(0, 0, 0, 0.1), 0 5px rgba(0, 0, 0, 0.1),
-    0 6px transparent, 0 7px transparent, 0 8px transparent, 0 9px transparent,
-    0 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(20px);
-  animation: bounce 0.5s ease infinite alternate;
-}
+      body {
+        font-family: "Exo", sans-serif;
+        font-size: 16px;
+      }
 
+      .wrap-loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #000;
+      }
+
+      .loader {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+      }
+      .loader::before {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8.6956521739rem;
+        height: 8.6956521739rem;
+        background: #000;
+        border-radius: 50%;
+      }
+      .loader .box {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+      }
+      .loader .box::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+      .loader .box:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+      .loader .box:nth-child(1)::before {
+        top: 50%;
+        left: 50%;
+        background: #4185f3;
+        -webkit-animation: lightMe1 4s ease-out infinite normal;
+        animation: lightMe1 4s ease-out infinite normal;
+      }
+      .loader .box:nth-child(2) {
+        top: 0;
+        right: 0;
+      }
+      .loader .box:nth-child(2)::before {
+        top: 50%;
+        right: 50%;
+        background: #33a753;
+        -webkit-animation: lightMe2 4s ease-out infinite normal;
+        animation: lightMe2 4s ease-out infinite normal;
+      }
+      .loader .box:nth-child(3) {
+        bottom: 0;
+        right: 0;
+      }
+      .loader .box:nth-child(3)::before {
+        bottom: 50%;
+        right: 50%;
+        background: #fabb04;
+        -webkit-animation: lightMe3 4s ease-out infinite normal;
+        animation: lightMe3 4s ease-out infinite normal;
+      }
+      .loader .box:nth-child(4) {
+        bottom: 0;
+        left: 0;
+      }
+      .loader .box:nth-child(4)::before {
+        bottom: 50%;
+        left: 50%;
+        background: #e94234;
+        -webkit-animation: lightMe4 4s linear infinite normal;
+        animation: lightMe4 4s linear infinite normal;
+      }
+      .loader .wrap-text {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+      }
+      .loader .text {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        -webkit-animation: slider 8s ease-in infinite;
+        animation: slider 8s ease-in infinite;
+      }
+      .loader .text span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 2em;
+        color: #fff;
+      }
+
+      .loader-text {
+        color: #fff;
+        transform: translateY(-2rem);
+        letter-spacing: 6px;
+        opacity: 0.2;
+        -webkit-animation: blink 1s ease-out infinite alternate;
+        animation: blink 1s ease-out infinite alternate;
+      }
+
+      @-webkit-keyframes lightMe1 {
+        0% {
+          opacity: 0.1;
+        }
+        25% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes lightMe1 {
+        0% {
+          opacity: 0.1;
+        }
+        25% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes lightMe2 {
+        0% {
+          opacity: 0.1;
+        }
+        25% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes lightMe2 {
+        0% {
+          opacity: 0.1;
+        }
+        25% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes lightMe3 {
+        0% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 0.1;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes lightMe3 {
+        0% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 0.1;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes lightMe4 {
+        0% {
+          opacity: 0.1;
+        }
+        75% {
+          opacity: 0.1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes lightMe4 {
+        0% {
+          opacity: 0.1;
+        }
+        75% {
+          opacity: 0.1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes slider {
+        0% {
+          transform: translateY(0);
+        }
+        10.5% {
+          transform: translateY(0);
+        }
+        12.5% {
+          transform: translateY(-40px);
+        }
+        23% {
+          transform: translateY(-40px);
+        }
+        25% {
+          transform: translateY(-80px);
+        }
+        35% {
+          transform: translateY(-80px);
+        }
+        37.5% {
+          transform: translateY(-120px);
+        }
+        47.5% {
+          transform: translateY(-120px);
+        }
+        50% {
+          transform: translateY(-160px);
+        }
+        60% {
+          transform: translateY(-160px);
+        }
+        62.5% {
+          transform: translateY(-200px);
+        }
+        72.5% {
+          transform: translateY(-200px);
+        }
+        75% {
+          transform: translateY(-240px);
+        }
+        85% {
+          transform: translateY(-240px);
+        }
+        87.5% {
+          transform: translateY(-280px);
+        }
+        100% {
+          transform: translateY(-280px);
+        }
+      }
+      @keyframes slider {
+        0% {
+          transform: translateY(0);
+        }
+        10.5% {
+          transform: translateY(0);
+        }
+        12.5% {
+          transform: translateY(-40px);
+        }
+        23% {
+          transform: translateY(-40px);
+        }
+        25% {
+          transform: translateY(-80px);
+        }
+        35% {
+          transform: translateY(-80px);
+        }
+        37.5% {
+          transform: translateY(-120px);
+        }
+        47.5% {
+          transform: translateY(-120px);
+        }
+        50% {
+          transform: translateY(-160px);
+        }
+        60% {
+          transform: translateY(-160px);
+        }
+        62.5% {
+          transform: translateY(-200px);
+        }
+        72.5% {
+          transform: translateY(-200px);
+        }
+        75% {
+          transform: translateY(-240px);
+        }
+        85% {
+          transform: translateY(-240px);
+        }
+        87.5% {
+          transform: translateY(-280px);
+        }
+        100% {
+          transform: translateY(-280px);
+        }
+      }
+      @-webkit-keyframes blink {
+        from {
+          opacity: 0.2;
+        }
+        to {
+          opacity: 0.75;
+        }
+      }
+      @keyframes blink {
+        from {
+          opacity: 0.2;
+        }
+        to {
+          opacity: 0.75;
+        }
+      }
 @keyframes bounce {
   to {
     text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb,
@@ -473,19 +784,24 @@
 
 
 <body>
-    <div class="loading">Loading...</div>
+    <div class="wrap-loader">
+        <div class="loader">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="wrap-text">
+            <div class="text">
+              <span>L</span><span>O</span><span>A</span><span>D</span
+              ><span>I</span><span>N</span><span>G</span><span>...</span>
+            </div>
+          </div>
+        </div>
+        <div class="loader-text">wait please</div>
+      </div>
 
-    <script> 
-    let loading = document.querySelector(".loading");
-let letters = loading.textContent.split("");
-loading.textContent = "";
-letters.forEach((letter, i) => {
-  let span = document.createElement("span");
-  span.textContent = letter;
-  span.style.animationDelay = `${i / 10}s`;
-  loading.append(span);
-});
-    </script>
+
+    <section class="homesection">
     <div class="main">
         <nav class="navigation">
             <ul>
@@ -736,18 +1052,19 @@ letters.forEach((letter, i) => {
 	
 	
     <script src="script.js"></script>
-
+</section>
 </body>
 
-<script>
-    const currentLoaction = location.href;
-    const menuitem = document.querySelectorAll('a');
-    const menulength = menuitem.length
-    for (let i = 0; i < menulength; i++) {
-        if (menuitem[i].href === currentLoaction) {
-            menuitem[i].className = "active"
-        }
-    }
-</script>
-
+<
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script>
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function () {
+    // Animate loader off screen
+    $(".wrap-loader").fadeOut("slow");
+    $(".homesection").css("display", "block");
+  });
+</script>
