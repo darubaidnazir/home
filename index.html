@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dar Ubaid Nazir - State of Art Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -170,12 +170,12 @@
             100% { transform: translate(0, 0); }
         }
         .photo-frame {
-            width: 250px;
-            height: 250px;
+            width: clamp(160px, 25vw, 200px);
+            height: clamp(160px, 25vw, 200px);
             margin: 0 auto;
             background: linear-gradient(45deg, #ffe066, #ff85c0);
             border-radius: 50%;
-            padding: 10px;
+            padding: clamp(6px, 1vw, 8px);
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
             overflow: hidden;
         }
@@ -186,7 +186,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-             background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') no-repeat center;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') no-repeat center;
             background-size: cover;
             opacity: 0.2;
             transform: rotate(45deg);
@@ -199,7 +199,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(0.875rem, 2vw, 1.2rem);
+            font-size: clamp(0.75rem, 1.5vw, 1rem);
             color: #ffffff;
             text-align: center;
             border-radius: 50%;
@@ -253,7 +253,7 @@
         }
         .timeline-item {
             flex: 0 0 auto;
-            width: clamp(180px, 22vw, 280px);
+            width: clamp(160px, 20vw, 240px);
             text-align: center;
             position: relative;
             cursor: pointer;
@@ -305,14 +305,14 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border-radius: 20px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 90%;
+            padding: clamp(1rem, 3vw, 2rem);
+            max-width: 90%;
+            width: clamp(300px, 80vw, 600px);
             position: relative;
         }
         .welcome-content {
             text-align: center;
-            max-width: 500px;
+            max-width: clamp(280px, 70vw, 500px);
             border: 2px solid transparent;
             border-image: linear-gradient(45deg, #ffe066, #ff85c0) 1;
         }
@@ -338,12 +338,12 @@
         }
         .modal-canvas {
             width: 100%;
-            height: 250px;
+            height: clamp(150px, 40vw, 250px);
             border-radius: 10px;
         }
         .modal-fallback {
             width: 100%;
-            height: 250px;
+            height: clamp(150px, 40vw, 250px);
             background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
@@ -368,15 +368,13 @@
         .svg-text.visible {
             stroke-dashoffset: 0;
         }
-        @media (max-width: 1024px) {
-            .photo-frame { width: 200px; height: 200px; padding: 8px; }
-            .section { padding: 2rem 1rem; }
-        }
-        @media (max-width: 640px) {
-            body { cursor: auto; }
-            .custom-cursor { display: none; }
-            .photo-frame { width: 160px; height: 160px; padding: 6px; }
-            .hamburger { display: flex; }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+            .hamburger {
+                display: flex;
+            }
             .nav-menu {
                 position: absolute;
                 top: 64px;
@@ -397,8 +395,94 @@
                 max-height: 400px;
                 opacity: 1;
             }
-            .modal-content, .welcome-content { padding: 1rem; }
-            .modal-canvas, .modal-fallback { height: 200px; }
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+            .photo-frame {
+                width: clamp(120px, 20vw, 160px);
+                height: clamp(120px, 20vw, 160px);
+                padding: 6px;
+            }
+            .section {
+                padding: 1.5rem 0.75rem;
+            }
+            h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+            h3 {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+            }
+            p, li {
+                font-size: clamp(0.75rem, 3vw, 0.875rem);
+            }
+            .connect-btn {
+                padding: 0.5rem 1rem;
+                font-size: clamp(0.75rem, 3vw, 0.875rem);
+            }
+            .card {
+                padding: 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item {
+                width: clamp(140px, 18vw, 200px);
+            }
+            .modal-content, .welcome-content {
+                padding: 1rem;
+                max-width: 95%;
+            }
+            .modal-canvas, .modal-fallback {
+                height: clamp(120px, 35vw, 200px);
+            }
+            .custom-cursor {
+                display: none;
+            }
+            .hero-canvas {
+                opacity: 0.4;
+            }
+            .filter-tags {
+                gap: 0.25rem;
+            }
+            .tag {
+                padding: 0.4rem 0.8rem;
+                font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .photo-frame {
+                width: clamp(160px, 22vw, 180px);
+                height: clamp(160px, 22vw, 180px);
+                padding: 8px;
+            }
+            .section {
+                padding: 2rem 1rem;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: clamp(3rem, 10vw, 4rem);
+            }
+            h2 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            h3 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
         }
     </style>
 </head>
@@ -876,16 +960,18 @@
         });
         window.addEventListener('load', showWelcomePopup);
 
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = `${e.clientX - 10}px`;
-            cursor.style.top = `${e.clientY - 10}px`;
-        });
-        document.querySelectorAll('a, .card, .tag, .connect-btn, .timeline-item, .social-icon, .close-welcome, .close-modal').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
+        // Custom Cursor (Disabled on Mobile)
+        if (window.innerWidth > 768) {
+            const cursor = document.querySelector('.custom-cursor');
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = `${e.clientX - 10}px`;
+                cursor.style.top = `${e.clientY - 10}px`;
+            });
+            document.querySelectorAll('a, .card, .tag, .connect-btn, .timeline-item, .social-icon, .close-welcome, .close-modal').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
 
         // Navbar Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -934,7 +1020,7 @@
                 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 const particles = new THREE.Group();
-                const particleCount = window.innerWidth <= 640 ? 50 : 100;
+                const particleCount = window.innerWidth <= 768 ? 30 : 100;
                 const particleGeometry = new THREE.SphereGeometry(0.08, 12, 12);
                 const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffe066 });
 
