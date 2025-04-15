@@ -1,575 +1,518 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dar Ubaid Nazir</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
-    <noscript>
-      <style type="text/css">
-        [data-aos] {
-            opacity: 1 !important;
-            transform: translate(0) scale(1) !important;
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
         }
-      </style>
-    </noscript>
-  </head>
-  <body id="top">
-    <header>
-      <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-          <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Dar Ubaid Nazir</a>
-              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="page-content">
-      <div>
-<div class="profile-page">
-  <div class="wrapper">
-    <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/bg.jpg')"></div>
-      <div class="container">
-        <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/darubi.png" alt="Image"/></a></div>
-          <div class="h2 title">Dar Ubaid Nazir</div>
-          <p class="category text-white">Computer Engineer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="cv.txt" download data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="https://facebook.com/darubaidnazir"  target="_blank" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://linkedin.com/in/darubaidnazir"  target="_blank" rel="tooltip" title="Follow me on LinkedIn"><i class="fa fa-linkedin"></i></a></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/darubaidnazir" target="_blank" rel="tooltip" title="Follow me on github"><i class="fa fa-github"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://instagram.com/darubaidnazir"  target="_blank" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar Ubaid Nazir - Visionary Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0d0d2b 0%, #1a1a4d 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ffd700, #ff6ec4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            border-radius: 20px;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        .tag {
+            background: linear-gradient(45deg, #ff6ec4, #ffd700);
+            color: #0d0d2b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 50px;
+        }
+        .tag:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 110, 196, 0.4);
+        }
+        .connect-btn {
+            background: linear-gradient(90deg, #ffd700, #ff6ec4);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+        .connect-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 110, 196, 0.5);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ffd700, #ff6ec4);
+            border-radius: 4px;
+        }
+        .aurora {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            z-index: -2;
+            animation: auroraShift 20s infinite ease-in-out;
+        }
+        @keyframes auroraShift {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(10%, 10%); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora"></div>
 
-<div class="section" id="about">
-  <div class="container">
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">About</div>
-            <p>As-salamu alaykum!</p>
-            <p>As a graduate of BTech in Computer Science and Engineering from the University of Kashmir North Campus, I have embarked on a journey of knowledge and skill acquisition. My academic journey has been one of rigor and excellence, where i have gained a comprehensive understanding of the core principles of computer science. This knowledge has been further enhanced by my hands-on experience of working on various projects, from full-stack development to android, game development, Artificial Intelligence, Machine Learning, and blockchain technology. Each of these projects has been an opportunity for me to showcase my problem-solving skills, technical expertise and my ability to deliver results. With my diverse skill set and experience, i have positioned myself as a valuable asset in the tech industry, ready to take on the challenges of the future and make a meaningful impact.</p>
-          </div>
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-3xl font-bold gradient-text font-['Playfair Display']">DUN</span>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Home</a>
+                    <a href="#education" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Education</a>
+                    <a href="#experience" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Experience</a>
+                    <a href="#projects" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Projects</a>
+                    <a href="#skills" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Skills</a>
+                    <a href="#awards" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Awards</a>
+                    <a href="#contact" class="text-white hover:gradient-text px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Contact</a>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">22</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">darubaidnazir@gmail.com.com</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+919622922604</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">Bogund, Kulgam, J&K, India</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, Urdu, Kashmiri</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Religion:</strong></div>
-              <div class="col-sm-8">ISLAM</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="skill">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Professional Skills</div>
-    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Front-end Web </span>
-              <p><span style="color: black">HTML,CSS,JavaScript,Bootstrap</span></p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">90%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Back-end Web </span>
-              <p><span style="color: black">Oops PHP,PDO PHP,MYSQL</span></p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">95%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Programming Languages</span>
-              <p>C, C++, Java, JavaScript,Python, PHP.</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">90%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Advanced technologies</span>
-              <p><Blockquote>BlockChain, Machine Learning, Deep Learning, Cloud Computing, Artificial Intelligence</Blockquote></p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Tools</span>
-              <p>MS Office, Git & Github, Docker, Canvas etc</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">75%</span>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 ml-auto mr-auto">
-        <div class="h4 text-center mb-4 title">Portfolio</div>
-        <div class="nav-align-center">
-          <ul class="nav nav-pills nav-pills-primary" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist"><i title="Projects"class="fa fa-laptop" aria-hidden="true"></i></a></li>
-            <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i title="Awards & Achievements" class="fa fa-trophy" aria-hidden="true"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Photography" role="tablist"><i title="Gallery" class="fa fa-camera" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="tab-content gallery mt-5">
-      <div class="tab-pane active" id="web-development">
-        <h1 style="text-align: center;">Projects</h1>
-        
+    </nav>
 
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                  <p>
-                    <div class="h4 card-body">“Department Management System North Campus”</div>
-                   
-              
-              
-                <p class='card-body'>Designed and developed a web-based software that automated various functions of a campus or department, including attendance, student records, teacher records, lecture plans, lecture records, and time tables.
-                  Implemented a lecture scheduling conflict system to avoid conflicts in attendance, resulting in a 30% reduction in scheduling errors and conflicts. 
-                  Streamlined the management process and reduced the time required for administrative tasks by 40%, saving an average of 10 hours per week.
-                  Utilized a range of technologies including HTML, CSS, JavaScript, Object-Oriented PHP, JQuery, AJAX, and MySQL
-                  .<a href="https://github.com/darubaidnazir/DMS">Code & Documentation</a></p>
-                </div>
-                  
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div class="h4 card-body">“
-                  Automated online Attendance System”</div>
-                <p class="card-body">Developed an Open Source web-based software for remote attendance during the COVID-19 pandemic when classes were conducted on Zoom. 
-                  	The software functioned similar to Google Classroom, allowing teachers to add classes, share codes, and track attendance.
-                  	 Automated the attendance system, making it more convenient and 100% efficient for both teachers and students. 
-                  	Implemented a real-time notification system, increasing student engagement and attendance by 25%.
-                  	Technology used (HTML, CSS, JAVASCRIPT, PHP, JQuery, and MYSQL.) 
-                  . <a href="https://github.com/darubaidnazir/onlineattendance">Code & Documentation</a></p>
-              </div>
-               
-            </div>
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                  <div class="h4 card-body ">“Connect 4 Game”</div>
-                  <p class="card-body">Connect Four is a two-player connection game in which the
-                    players first choose a color and then take turns dropping
-                    colored discs from the top into a seven-column, six-row
-                    vertically suspended grid. The pieces fall straight down,
-                    occupying the next available space within the column. The
-                    objective of the game is to be the first to form a horizontal,
-                    vertical, or diagonal line of four of one's own discs. Connect
-                    Four is a solved game. The first player can always win by playing
-                    the right moves. Technology used (Java, XML, JavaFx).<a href="https://github.com/darubaidnazir/Connect4Game">Code & Documentation</a></p>
-                </div>
-                  
-              
-            </div>
-          </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <canvas class="hero-canvas"></canvas>
+        <div class="text-center section z-10 px-4">
+            <h1 class="text-7xl font-extrabold mb-8 gradient-text font-['Playfair Display']">Dar Ubaid Nazir</h1>
+            <h2 class="text-4xl font-light mb-12 text-white opacity-90">M.Tech AI/ML | GATE Qualified | Tech Innovator</h2>
+            <p class="text-white opacity-80 max-w-2xl mx-auto mb-12">
+                Pursuing M.Tech in Computer Engineering (AI/ML) at Jamia Millia Islamia, I am a GATE-qualified professional with a robust background in full-stack development, Android, game development, AI, ML, and blockchain. My projects reflect my problem-solving skills and technical expertise, positioning me to make a meaningful impact in the tech industry.
+            </p>
+            <a href="#contact" class="connect-btn inline-block text-[#0d0d2b] px-10 py-5 rounded-full font-semibold text-xl glow">Connect with Me</a>
         </div>
-      </div>
-      <div class="tab-pane" id="graphic-design" role="tabpanel">
-        <h1 style="text-align: center;">Awards and Achievements</h1>
-       
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                      <div class="h4 card-body">“Certificate of Appreciation”</div>
-                      <p class="card-body">Certificate of appreciation for maintaining the lab and server in the Department of CSE North Campus, awarded by Director North Campus in [Feb-2023]</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">M.Tech in AI & Machine Learning</h3>
+                    <p class="text-white opacity-80 mt-3">Jamia Millia Islamia, New Delhi | 2023 - 2025</p>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">B.Tech in Computer Science</h3>
+                    <p class="text-white opacity-80 mt-3">University of Kashmir, North Campus | 2018 - 2022</p>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">12th, Science</h3>
+                    <p class="text-white opacity-80 mt-3">Hista Higher Secondary, Anantnag | 2016 - 2017</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 bg-gradient-to-b from-transparent to-[#0d0d2b]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Experience</h2>
+            <div class="grid grid-cols-1 gap-12">
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">Student Placement Coordinator</h3>
+                    <p class="text-white opacity-80 mt-3">Jamia Millia Islamia, Faculty of Engineering | Jun 2024 - Present</p>
+                    <ul class="list-none mt-6 text-white opacity-90 space-y-4">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Facilitate placement activities for the Department of Computer Engineering.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Collaborate with industry partners to secure opportunities for students.
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">Internshala Student Partner (ISP 20)</h3>
+                    <p class="text-white opacity-80 mt-3">Internshala | Feb 2023 - Apr 2023</p>
+                    <ul class="list-none mt-6 text-white opacity-90 space-y-4">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Promoted internship and training opportunities to students worldwide.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Organized seminars and brand campaigns, earning certificates for excellence.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Achieved recognition in ISP 20 Referrals Contest and other initiatives.
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">Co-Founder & Senior Software Developer</h3>
+                    <p class="text-white opacity-80 mt-3">M/S LAHMINDIA | Apr 2022 - Dec 2022</p>
+                    <ul class="list-none mt-6 text-white opacity-90 space-y-4">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Developed and maintained website and server infrastructure.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-[#ffd700] rounded-full mt-2 mr-3"></span>
+                            Engineered scalable solutions for e-commerce platforms.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold gradient-text">Full-Stack Web Application</h3>
+                    <p class="text-white opacity-80 mt-2">2023</p>
+                    <p class="mt-4 text-white opacity-90">Built a dynamic web app with real-time features and a secure backend.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">HTML</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">CSS</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">JavaScript</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Node.js</span>
                     </div>
-              
-            </div>
-           
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane" id="Photography" role="tabpanel">
-        <h1 style="text-align: center;">Gallery</h1>
-        <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#Photography">
-                  <figure class="cc-effect"><img src="images/graphic-design-1.png" alt="Image"/>
-                    <figcaption>
-                      <div class="h4">Pictures not available</div>
-                      <p></p>
-                    </figcaption>
-                  </figure></a></div>
-             
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="experience">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Work Experience</div>
-  <!--  <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>March 2016 - Present</p>
-            <div class="h5">CreativeM</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Front End Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>-->
-   
-  </div>
-</div>
-<div class="section">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2018 - 2022</p>
-            <div class="h5">Bachelor's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Bachelors of Technology in Computer Science and Engineering</div>
-            <p class="category">University of Kashmir North Campus</p>
-            <div class="h5">CGPA: 3.30/4.0 </div>
-            <p>
-              <p class="category">Relevant coursework:</p> Database Management Systems, C Programming, Python Programming, Computer Architecture, Microprocessor, Compiler Design, Theory of Computation, AI & ML, Computer Graphics, Numerical Methods, Engineering Mathematics, Digital Electronics, Java Programming, Software Engineering and more.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2016 - 2017</p>
-            <div class="h5">Higher Secondary School - 12<sup>th</sup></div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Non-Medical (PCM)</div>
-            <p class="category">Hista Higher Secondary School Anantnag</p>
-            <p>An accomplished individual who completed the 12th grade with PCM (Physics, Chemistry, and Mathematics) in 2017. Possesses a strong academic background in these core subjects, with a focus on mathematics and problem-solving. Skilled in using analytical and logical reasoning to approach complex problems and finding solutions. Committed to continued learning and exploring new areas of interest. Demonstrated leadership skills and dedication through participation in extracurricular activities, such as sports teams and community service organizations. Ready to take on new challenges and contribute to the success of any team or organization.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2005 - 2015</p>
-            <div class="h5">High School 10<sup>th</sup></div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">General Studies</div>
-            <p class="category">ST Luke's Convent School Anantnag.</p>
-            <p>A highly motivated and dedicated individual who completed the 10th grade with general subjects in 2015. Possesses a strong academic background with a broad range of knowledge in subjects such as mathematics, science, social studies, and language arts. Skilled in participating in extracurricular activities, such as sports teams, music groups, or community service organizations, to develop leadership skills, social connections, and a sense of civic responsibility. Committed to continued learning and ready to take on new challenges.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Volunteer Activity</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>Feb 2019- Dec 2022</p>
-            <div class="h5">Education Mentor</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">SAMAGRA SHIKSHA (J&K)</div>
-            
-            <p>
-              <p class="category">Certificate of volunteer work for maintaining the library in CSE North Campus, awarded by Library Controller North Campus in [Feb-2023]..
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>31 Jan 2023 – 04 Mar 2023</p>
-            <div class="h5">Fundraising Intern</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Tare Zameen Foundation Delhi</div>
-            
-            <p>
-              <p class="category">Activity Performed</p>•	The Project - Meri Pehchan- Providing basic education and books to unprivileged boys and girls.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>13 Jan 2023 - Present</p>
-            <div class="h5">Member of Social impact plan</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Ketto Organization</div>
-            
-            <p>
-              <p class="category">Activity Performed</p>•	Ketto SIP is a unique social impact plan where I donate monthly to Ketto.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p> 2019-2022</p>
-            <div class="h5">Library Maintainer</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Department of Computer Science & Engineering North Campus</div>
-            
-            <p>
-              <p class="category">Activity Performed</p>Volunteering time and effort given for "NAI RAH" Program organized by Samagra Shiksha (J&K) in Collaboration  with UNICEF & PRATHAM EDUCATION FOUNDATION.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-<div class="section" id="reference">
-  <div class="container cc-reference">
-    <div class="h4 mb-4 text-center title">References</div>
-    <div class="card" data-aos="zoom-in">
-      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
-          <li data-target="#cc-Indicators" data-slide-to="1"></li>
-          <li data-target="#cc-Indicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-1.jpg" alt="Image"/>
-                <div class="h5 pt-2">Hesam Akhtar</div>
-                <p class="category">Assistant Professor UOK</p>
-              </div>
-              <div class="col-lg-10 col-md-9">
-                <p> I've had the privilege of getting to know Dar Ubaid Nazir. His ambition, intelligence, and dedication to computer science and engineering have continuously left an impression on me as his professor during his bachelor’s degree.
-                  Ubaid constantly displayed excellent ability and attention to logical reasoning and comprehending hard problems in computer programming, algorithm, and data mining subjects. He has worked on a project “Department Management System” that required him to be knowledgeable about the various programming languages and its many frameworks, and he always delivered high-quality results. Additionally, he actively participated in class discussions and was not shy about expressing his opinions or asking questions.
-                  I have no doubt that Ubaid would benefit to any organization much. He possesses the abilities and motivation to succeed in any task or position and contribute significantly to any organization, company, institution or firm.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-lg-2 col-md-4 cc-reference-header"><img src="images/defult.png" alt="Image"/>
-                <div class="h5 pt-2">Waseem Jeelani Bakshi</div>
-                <p class="category">Assistant Professor UOK</p>
-              </div>
-              <div class="col-lg-10 col-md-10">
-                <p> It gives me a lot of pleasure to recommend Mr. Dar Ubaid. During my teaching experience in the present university, I have come across a wide spectrum of students. Considering all of hid personal qualities, I would place Mr. Dar Ubaid among top 5% of all the students that I have taught. Mr. Dar Ubaid has been my student for 4 years from 2018 to 2022 in University of Kashmir. 
-                  Mr. Dar Ubaid is a very sincere and diligent student with sufficient motivation to excel in his chosen field of studies. He has been consistent in his academics, managing to retain his position within the top five percentile in his class all throughout the eight semesters. His performance in subjects like Numerical Algorithms, Microprocessor, Computer Graphics, etc was exemplary where he managed to be ranked amongst top 5 in the class. He has also shown an innovative nature and ability to think from a non-conventional point of view. I have seen a keen urge in him to understand engineering concepts beyond the theoretical purview reflecting his potential for research. 
-                 On a personal level, Mr. Dar Ubaid is an ambitious person showing a lot of enthusiasm for cultural and extracurricular activities. He displayed exceptional presentation skills and leadership qualities. He participated in a number of debates and seminars at various inter-university events. Besides he has volunteered for many events during his years at the university. 
-                 Besides academics, Mr. Dar Ubaid has also shown hid adeptness at organizational skills. He has a very amicable disposition making him approachable and easy to communicate with. 
-                 I wish Mr. Dar Ubaid all the best for his future..</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-3.jpg" alt="Image"/>
-                <div class="h5 pt-2">Saqib Ul Sabha</div>
-                <p class="category">Research Scholar</p>
-              </div>
-              <div class="col-lg-10 col-md-9">
-                <p> "I am pleased to recommend Ubaid Nazir for any Organisation looking for a talented and dedicated computer science and engineering professional. As his professor at Kashmir University, I had the pleasure of seeing him excel in his studies and demonstrate a strong aptitude for computer science and engineering.
-
-                  Ubaid's technical skills are impressive, he has a deep understanding of computer science and engineering concepts and able to apply them to real-world problems. He has a strong work ethic and is always willing to go the extra mile to ensure that projects are completed on time and to the highest standard. He is a team player, who is able to work well with others and contribute positively to group dynamics.
-                  
-                  I have no doubt that Ubaid will be a valuable asset to any company, and I highly recommend him for any opportunity in the field of computer science and engineering.".</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url('images/cn.jpg')">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <form action="https://formspree.io/f/xyyaerkg" method="POST">
-                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <button class="btn btn-primary" type="submit">Send</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">Bogund Kulgam,192231</p>
-                    <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">+919622922604</p>
-                    <p class="mb-0"><strong>Email</strong></p>
-                    <p>darubaidnazir@gmail.com</p>
-                  </div>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold gradient-text">Android Application</h3>
+                    <p class="text-white opacity-80 mt-2">2022</p>
+                    <p class="mt-4 text-white opacity-90">Developed a user-friendly mobile app with integrated APIs.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Java</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Android Studio</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">REST API</span>
+                    </div>
                 </div>
-              </div>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold gradient-text">Blockchain Transaction System</h3>
+                    <p class="text-white opacity-80 mt-2">2022</p>
+                    <p class="mt-4 text-white opacity-90">Created a decentralized app for secure transactions.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Solidity</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Ethereum</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Web3.js</span>
+                    </div>
+                </div>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold gradient-text">AI-Driven Game Prototype</h3>
+                    <p class="text-white opacity-80 mt-2">2023</p>
+                    <p class="mt-4 text-white opacity-90">Designed a game with AI-powered mechanics for enhanced gameplay.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Python</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Unity</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold gradient-text">ML-Based Image Processor</h3>
+                    <p class="text-white opacity-80 mt-2">2024</p>
+                    <p class="mt-4 text-white opacity-90">Developed an ML model for advanced digital image processing.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Python</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">OpenCV</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">TensorFlow</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div></div>
-    </div>
-    <footer class="footer">
-      <div class="container text-center"><a class="cc-facebook btn btn-link" href="https://www.facebook.com/darubaidnazir"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="https://www.twitter.com/darubaidnazir"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="https://instagram.com/darubaidnazir"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center"></div>
-      <div class="text-center text-muted">
-        <p>&copy; Dar Ubaid Nazir. All rights reserved.</p>
-      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 bg-gradient-to-b from-[#0d0d2b] to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Skills & Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="card p-10">
+                    <h3 class="text-2xl font-semibold gradient-text mb-6">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Python</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Digital Image Processing</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Arduino</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Java</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">JavaScript</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Node.js</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Solidity</span>
+                    </div>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-2xl font-semibold gradient-text mb-6">Certifications</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">Introduction to Web Development</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Blockchain and its Applications</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Programming in Python</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Technical Support Fundamentals</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Problem Solving (Basic)</span>
+                    </div>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-2xl font-semibold gradient-text mb-6">Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag px-4 py-2 text-sm font-medium">English (Professional)</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Kashmiri (Fluent)</span>
+                        <span class="tag px-4 py-2 text-sm font-medium">Urdu (Intermediate)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Honors & Awards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">Certificate of Appreciation</h3>
+                    <p class="text-white opacity-80 mt-3">Computer and HPC Server Labs Setup | Jamia Millia Islamia</p>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">Certificate of Appreciation</h3>
+                    <p class="text-white opacity-80 mt-3">HARUD Business Festival 2022</p>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">GATE 2024 Qualified</h3>
+                    <p class="text-white opacity-80 mt-3">Graduate Aptitude Test in Engineering</p>
+                </div>
+                <div class="card p-10">
+                    <h3 class="text-3xl font-semibold gradient-text">UGC PGGATE Fellowship</h3>
+                    <p class="text-white opacity-80 mt-3">Recipient for Academic Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
+            <h2 class="text-5xl font-bold text-center mb-20 gradient-text font-['Playfair Display']">Connect</h2>
+            <div class="text-center">
+                <p class="text-white opacity-90 text-xl mb-8">Email: <a href="mailto:dar2303194@st.jmi.ac.in" class="gradient-text hover:underline">dar2303194@st.jmi.ac.in</a></p>
+                <p class="text-white opacity-90 text-xl mb-8">Phone: <a href="tel:+919622922604" class="gradient-text hover:underline">+91-9622922604</a></p>
+                <p class="text-white opacity-90 text-xl mb-10">Location: Bogund Kulgam, 192231, India</p>
+                <div class="flex justify-center space-x-8">
+                    <a href="https://www.linkedin.com/in/darubaidnazir/" target="_blank" class="text-white hover:gradient-text transition-colors">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://darubaidnazir.github.io/home/" target="_blank" class="text-white hover:gradient-text transition-colors">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.22-1.78L9 14v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d0d2b] py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-white opacity-80 text-lg">© 2025 Dar Ubaid Nazir. Shaping the Future with Innovation.</p>
+        </div>
     </footer>
-    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
-    <script src="js/core/popper.min.js?ver=1.1.0"></script>
-    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
-    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
-    <script src="js/aos.js?ver=1.1.0"></script>
-    <script src="scripts/main.js?ver=1.1.0"></script>
-  </body>
+
+    <script>
+        // Initialize Three.js only if canvas is supported
+        const canvas = document.querySelector('.hero-canvas');
+        let scene, camera, renderer, particles;
+
+        function initThreeJS() {
+            try {
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+                particles = new THREE.Group();
+                const particleCount = 200;
+                const particleGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+                const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffd700 });
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+                    particle.position.set(
+                        (Math.random() - 0.5) * 100,
+                        (Math.random() - 0.5) * 100,
+                        (Math.random() - 0.5) * 100
+                    );
+                    particle.velocity = new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.05,
+                        (Math.random() - 0.5) * 0.05,
+                        (Math.random() - 0.5) * 0.05
+                    );
+                    particles.add(particle);
+                }
+                scene.add(particles);
+
+                camera.position.z = 50;
+            } catch (e) {
+                console.error('Three.js initialization failed:', e);
+                canvas.style.display = 'none'; // Fallback if WebGL fails
+            }
+        }
+
+        function animateParticles() {
+            if (!renderer) return;
+            requestAnimationFrame(animateParticles);
+            particles.children.forEach(p => {
+                p.position.add(p.velocity);
+                if (p.position.length() > 50) {
+                    p.velocity.multiplyScalar(-1);
+                }
+                p.material.color.setHSL(Math.sin(Date.now() * 0.001 + p.position.x) * 0.5 + 0.5, 0.7, 0.6);
+            });
+            particles.rotation.y += 0.002;
+            renderer.render(scene, camera);
+        }
+
+        // Check WebGL support
+        if (typeof THREE !== 'undefined') {
+            initThreeJS();
+            animateParticles();
+        } else {
+            canvas.style.display = 'none';
+        }
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            if (renderer) {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            }
+        });
+
+        // GSAP Scroll Animations
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            document.querySelectorAll('.section').forEach((section) => {
+                gsap.to(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: 'power4.out'
+                });
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('glow');
+            } else {
+                navbar.classList.remove('glow');
+            }
+        });
+
+        // Card Parallax Effect
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-10px) scale(1.02) rotateX(${y * 5}deg) rotateY(${x * 5}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
 </html>
