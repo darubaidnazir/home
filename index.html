@@ -806,125 +806,145 @@
           <div class="absolute w-96 h-96 bg-cyan-500 opacity-10 rounded-full blur-3xl top-2/3 left-2/4 animate-pulse"></div>
         </div>
       </section>
-      
+     
     
     <!-- Projects Section -->
-    <section id="projects" class="py-16 sm:py-24 lg:py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
-            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 lg:mb-20">
-                <svg class="inline-block w-full max-w-xs h-auto" viewBox="0 0 300 100">
-                    <text x="50%" y="50%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="50" class="svg-text">Projects</text>
-                </svg>
-            </h2>
-            <div class="filter-tags">
-                <span class="tag px-3 py-1 text-sm font-medium active" data-filter="all">All</span>
-                <span class="tag px-3 py-1 text-sm font-medium" data-filter="Python">Python</span>
-                <span class="tag px-3 py-1 text-sm font-medium" data-filter="Java">Java</span>
-                <span class="tag px-3 py-1 text-sm font-medium" data-filter="JavaScript">JavaScript</span>
-                <span class="tag px-3 py-1 text-sm font-medium" data-filter="Solidity">Solidity</span>
-            </div>
-            <div class="project-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-                <div class="card p-4 sm:p-6 lg:p-8 cursor-pointer" data-modal="project1" data-tags="JavaScript,Node.js">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold gradient-text">Full-Stack Web Application</h3>
-                    <p class="text-white opacity-80 mt-2 text-sm sm:text-base">2023</p>
-                    <p class="mt-2 sm:mt-4 text-white opacity-90 text-sm sm:text-base">Dynamic web app with real-time features.</p>
-                    <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">HTML</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">CSS</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">JavaScript</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Node.js</span>
-                    </div>
-                </div>
-                <div class="card p-4 sm:p-6 lg:p-8 cursor-pointer" data-modal="project2" data-tags="Java">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold gradient-text">Android Application</h3>
-                    <p class="text-white opacity-80 mt-2 text-sm sm:text-base">2022</p>
-                    <p class="mt-2 sm:mt-4 text-white opacity-90 text-sm sm:text-base">User-friendly mobile app with APIs.</p>
-                    <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Java</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Android Studio</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">REST API</span>
-                    </div>
-                </div>
-                <div class="card p-4 sm:p-6 lg:p-8 cursor-pointer" data-modal="project3" data-tags="Solidity">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold gradient-text">Blockchain Transaction System</h3>
-                    <p class="text-white opacity-80 mt-2 text-sm sm:text-base">2022</p>
-                    <p class="mt-2 sm:mt-4 text-white opacity-90 text-sm sm:text-base">Decentralized app for secure transactions.</p>
-                    <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Solidity</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Ethereum</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Web3.js</span>
-                    </div>
-                </div>
-                <div class="card p-4 sm:p-6 lg:p-8 cursor-pointer" data-modal="project4" data-tags="Python">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold gradient-text">AI-Driven Game Prototype</h3>
-                    <p class="text-white opacity-80 mt-2 text-sm sm:text-base">2023</p>
-                    <p class="mt-2 sm:mt-4 text-white opacity-90 text-sm sm:text-base">Game with AI-powered mechanics.</p>
-                    <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Python</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Unity</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Machine Learning</span>
-                    </div>
-                </div>
-                <div class="card p-4 sm:p-6 lg:p-8 cursor-pointer" data-modal="project5" data-tags="Python">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold gradient-text">ML-Based Image Processor</h3>
-                    <p class="text-white opacity-80 mt-2 text-sm sm:text-base">2024</p>
-                    <p class="mt-2 sm:mt-4 text-white opacity-90 text-sm sm:text-base">ML model for image processing.</p>
-                    <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">Python</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">OpenCV</span>
-                        <span class="tag px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">TensorFlow</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Project Modals -->
-            <div id="project1" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal" role="button" aria-label="Close modal">×</span>
-                    <h3 class="text-2xl font-semibold gradient-text mb-4">Full-Stack Web Application</h3>
-                    <p class="text-white opacity-90 mb-4">Dynamic web app with real-time features and secure backend.</p>
-                    <canvas class="modal-canvas"></canvas>
-                    <div class="modal-fallback">3D Preview Not Supported</div>
-                </div>
-            </div>
-            <div id="project2" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal" role="button" aria-label="Close modal">×</span>
-                    <h3 class="text-2xl font-semibold gradient-text mb-4">Android Application</h3>
-                    <p class="text-white opacity-90 mb-4">User-friendly mobile app with integrated APIs.</p>
-                    <canvas class="modal-canvas"></canvas>
-                    <div class="modal-fallback">3D Preview Not Supported</div>
-                </div>
-            </div>
-            <div id="project3" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal" role="button" aria-label="Close modal">×</span>
-                    <h3 class="text-2xl font-semibold gradient-text mb-4">Blockchain Transaction System</h3>
-                    <p class="text-white opacity-90 mb-4">Decentralized app for secure transactions.</p>
-                    <canvas class="modal-canvas"></canvas>
-                    <div class="modal-fallback">3D Preview Not Supported</div>
-                </div>
-            </div>
-            <div id="project4" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal" role="button" aria-label="Close modal">×</span>
-                    <h3 class="text-2xl font-semibold gradient-text mb-4">AI-Driven Game Prototype</h3>
-                    <p class="text-white opacity-90 mb-4">Game with AI-powered mechanics for enhanced gameplay.</p>
-                    <canvas class="modal-canvas"></canvas>
-                    <div class="modal-fallback">3D Preview Not Supported</div>
-                </div>
-            </div>
-            <div id="project5" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal" role="button" aria-label="Close modal">×</span>
-                    <h3 class="text-2xl font-semibold gradient-text mb-4">ML-Based Image Processor</h3>
-                    <p class="text-white opacity-90 mb-4">ML model for advanced digital image processing.</p>
-                    <canvas class="modal-canvas"></canvas>
-                    <div class="modal-fallback">3D Preview Not Supported</div>
-                </div>
-            </div>
+    
+<!--test   00-->
+<!-- Stylish Experience/Projects Section -->
+<section id="experience" class="py-20 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16">
+        <span class="block">Experience & Projects</span>
+        <span class="text-indigo-400 text-xl mt-2 block font-medium">A showcase of my real-world work</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  
+        <!-- Project Card -->
+        <div class="bg-[#1f1f2e] rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 gradient-text">Full-Stack Realtime Web App</h3>
+            <p class="text-sm text-gray-300 mb-4">Engineered a live-sync platform with WebSocket, REST APIs, and role-based auth.</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Built JWT-based auth system</li>
+              <li>Integrated real-time WebSocket updates</li>
+              <li>Deployed with CI/CD pipelines</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="bg-indigo-600 px-2 py-1 rounded">Node.js</span><span class="bg-purple-600 px-2 py-1 rounded">WebSocket</span><span class="bg-pink-600 px-2 py-1 rounded">MongoDB</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/yourusername/realtime-app" target="_blank" class="btn">GitHub</a>
+            <a href="https://yourrealtimeapp.live" target="_blank" class="btn">Live Demo</a>
+          </div>
         </div>
-    </section>
-
+  
+        <!-- Android App -->
+        <div class="bg-[#1f1f2e] rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 gradient-text">Android API Client</h3>
+            <p class="text-sm text-gray-300 mb-4">Crafted an Android app with modern UI, API integration, and MVVM architecture.</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Retrofit for RESTful calls</li>
+              <li>Clean architecture with ViewModel & LiveData</li>
+              <li>Jetpack components</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="bg-green-600 px-2 py-1 rounded">Java</span><span class="bg-teal-600 px-2 py-1 rounded">Android Studio</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/yourusername/android-api-client" target="_blank" class="btn">GitHub</a>
+            <a href="https://play.google.com/store/apps/details?id=your.app" target="_blank" class="btn">Play Store</a>
+          </div>
+        </div>
+  
+        <!-- Blockchain App -->
+        <div class="bg-[#1f1f2e] rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 gradient-text">Blockchain Transaction System</h3>
+            <p class="text-sm text-gray-300 mb-4">Developed smart contracts and wallet interactions for decentralized transactions on Ethereum.</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Secure Solidity-based contracts</li>
+              <li>Integrated Metamask & Web3.js</li>
+              <li>Deployed to Rinkeby Testnet</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="bg-yellow-600 px-2 py-1 rounded">Solidity</span><span class="bg-blue-600 px-2 py-1 rounded">Ethereum</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/yourusername/blockchain-p2p" target="_blank" class="btn">GitHub</a>
+            <a href="https://rinkeby.etherscan.io/address/yourcontract" target="_blank" class="btn">Contract</a>
+          </div>
+        </div>
+  
+        <!-- AI Game -->
+        <div class="bg-[#1f1f2e] rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 gradient-text">AI-Powered Game Prototype</h3>
+            <p class="text-sm text-gray-300 mb-4">Built an intelligent game bot using reinforcement learning and Unity integration.</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Used PPO algorithm for RL agent</li>
+              <li>Unity ML-Agents toolkit</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="bg-orange-600 px-2 py-1 rounded">Python</span><span class="bg-purple-600 px-2 py-1 rounded">Unity</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/yourusername/ai-game-bot" target="_blank" class="btn">GitHub</a>
+          </div>
+        </div>
+  
+        <!-- ML Image Processor -->
+        <div class="bg-[#1f1f2e] rounded-2xl shadow-lg p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2 gradient-text">Image Enhancement Pipeline</h3>
+            <p class="text-sm text-gray-300 mb-4">Engineered a fast ML model for enhancing and segmenting images using U-Net & OpenCV.</p>
+            <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+              <li>Optimized TensorFlow model for mobile</li>
+              <li>Batch inference with OpenCV</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="bg-pink-600 px-2 py-1 rounded">TensorFlow</span><span class="bg-blue-600 px-2 py-1 rounded">OpenCV</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/yourusername/image-enhancer" target="_blank" class="btn">GitHub</a>
+            <a href="https://your-image-enhancer-demo.com" target="_blank" class="btn">Live Demo</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- Utility Classes -->
+  <style>
+    .btn {
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
+      color: white;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+  
+    .btn:hover {
+      background: linear-gradient(to right, #7c3aed, #6d28d9);
+    }
+  
+    .gradient-text {
+      background: linear-gradient(to right, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+  
+<!--bdhjsa-->
     <!-- Skills Section -->
     <section id="skills" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-[#0d0d2b] to-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
