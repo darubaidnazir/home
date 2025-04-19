@@ -533,25 +533,172 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 sm:pt-24">
-        <canvas class="hero-canvas"></canvas>
-        <div class="hero-fallback"></div>
-        <div class="text-center section z-10 px-4 sm:px-6">
-            <div class="photo-frame mb-8 sm:mb-12">
-                <div class="photo-placeholder"><img src="images/darubi.png" alt="Dar Ubaid Nazir" class="photo-frame">
-</div>
-            </div>
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 gradient-text font-['Playfair Display']">Dar Ubaid Nazir</h1>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-light mb-8 sm:mb-12 text-white opacity-90 animate-float">M.Tech AI/ML | GATE Qualified | Tech Innovator</h2>
-            <p class="text-white opacity-80 max-w-md sm:max-w-lg lg:max-w-2xl mx-auto mb-8 sm:mb-12 text-sm sm:text-base lg:text-lg">
-                Pursuing M.Tech in Computer Engineering (AI/ML) at Jamia Millia Islamia, I am a GATE-qualified professional with expertise in full-stack development, Android, AI, ML, and blockchain.
-            </p>
-            <a href="#contact" class="connect-btn inline-block text-[#0d0d2b] px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-semibold text-base sm:text-lg lg:text-xl glow" aria-label="Connect with me">Connect with Me</a>
-        </div>
-    </section>
 
+  <!-- Hero Section: Optimized Premium Design -->
+<section id="home" class="pt-20 sm:pt-24 lg:pt-32 relative min-h-screen overflow-hidden bg-gradient-to-br from-[#0b0b1f] via-[#1e1e3f] to-[#0b0b1f] text-white flex items-center justify-center">
+    <!-- Particle Background -->
+    <canvas id="hero-particles" class="absolute inset-0 w-full h-full opacity-20"></canvas>
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  
+    <!-- Main Content -->
+    <div class="relative z-10 flex flex-col items-center text-center px-4 sm:px-8 lg:px-16 max-w-3xl">
+      <!-- 3D Tilt Photo -->
+      <div class="tilt-wrapper mb-8 w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden ring-4 ring-indigo-500/60 shadow-2xl transition-transform duration-300 hover:scale-105">
+        <img src="images/darubi.png" alt="Dar Ubaid Nazir" class="w-full h-full object-cover"/>
+      </div>
+  
+      <!-- Animated Gradient Name -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 bg-clip-text text-transparent animate-gradient-text">
+        Dar Ubaid Nazir
+      </h1>
+  
+      <!-- Typewriter Effect -->
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-medium text-indigo-300 mb-6 h-8 overflow-hidden">
+        <span id="typewriter"></span>
+      </h2>
+  
+      <!-- Bio -->
+      <p class="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed mb-8">
+        M.Tech AI/ML candidate at Jamia Millia Islamia | GATE-qualified | Expert in Full-Stack, Android, AI/ML & Blockchain
+      </p>
+  
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center mb-8">
+        <a href="#contact" class="btn-primary">🚀 Hire Me</a>
+        <a href="/resume.pdf" target="_blank" class="btn-secondary">📄 Download Resume</a>
+      </div>
+  
+      <!-- Social Icons -->
+      <div class="mt-8 flex gap-6 text-2xl">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/darubaidnazir/" target="_blank" aria-label="LinkedIn" class="hover:text-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.865-3.058-1.865 0-2.151 1.453-2.151 2.957v5.705h-3v-10h2.881v1.367h.041c.401-.76 1.379-1.562 2.836-1.562 3.033 0 3.595 1.998 3.595 4.594v5.601z"/>
+          </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/darubaidnazir" target="_blank" aria-label="GitHub" class="hover:text-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.045.138 3.003.404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.825 1.1.825 2.22 0 1.604-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/>
+          </svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:darubaidnazir.cse@gmail.com" aria-label="Email" class="hover:text-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 12.713l11.985-9.713H.015L12 12.713zM12 14.286L.015 4.57v14.86h23.97V4.57L12 14.286z"/>
+          </svg>
+        </a>
+      </div>
+  
+      <!-- Scroll Down Arrow -->
+      <div class="absolute bottom-10 animate-bounce text-white text-3xl">
+        <a href="#experience">⬇️</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Styles & Scripts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body { margin: 0; font-family: 'Poppins', sans-serif; }
+  
+    .tilt-wrapper { perspective: 1000px; }
+    .tilt-wrapper .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+    .tilt-wrapper:hover .tilt-card {
+      transform: rotateY(15deg) rotateX(10deg);
+    }
+  
+    @keyframes gradientText {
+      0%,100% { background-position:0% }
+      50% { background-position:100% }
+    }
+    .animate-gradient-text {
+      background: linear-gradient(90deg, #ec4899, #f43f5e, #fbbf24);
+      background-size: 200% 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientText 4s ease infinite;
+    }
+  
+    .btn-primary, .btn-secondary {
+      font-weight: 600;
+      padding: .75rem 1.5rem;
+      border-radius: 9999px;
+      transition: transform .2s, background .3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: #ec4899;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #db2777;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #ec4899;
+      border: 1px solid #ec4899;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    // Initialize particles.js
+    particlesJS('hero-particles', {
+      particles: {
+        number: { value: 50, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.15 },
+        size: { value: 2 },
+        line_linked: { enable: true, distance: 120, color: '#ffffff', opacity: 0.1, width: 1 },
+        move: { enable: true, speed: 1, straight: false }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: 'repulse' } }
+      },
+      detect_on: 'canvas'
+    });
+  
+    // Typewriter effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const roles = ['Tech Innovator', 'Full-Stack Engineer', 'AI/ML Specialist'];
+      let i = 0, j = 0, deleting = false;
+      const tw = document.getElementById('typewriter');
+  
+      function type() {
+        const full = roles[i % roles.length];
+        tw.textContent = deleting ? full.substring(0, j--) : full.substring(0, j++);
+        if (!deleting && j === full.length) {
+          deleting = true;
+          setTimeout(type, 1000);
+        } else if (deleting && j === 0) {
+          deleting = false;
+          i++;
+          setTimeout(type, 500);
+        } else {
+          setTimeout(type, deleting ? 50 : 120);
+        }
+      }
+  
+      type();
+    });
+  </script>
+  
+  
     <!-- Education Section -->
     <section id="education" class="py-16 sm:py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section">
@@ -570,7 +717,7 @@
                 <div class="card bg-gradient-to-br from-indigo-800 to-indigo-900 text-white rounded-3xl shadow-2xl hover:shadow-xl transition-shadow duration-300 p-8 sm:p-10 lg:p-12 space-y-6">
                     <!-- Title -->
                     <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                      🎓 M.Tech in Computer Engineering (AI & Machine Learning)
+                      🎓 M.Tech in Computer Engineering (AI & ML)
                     </h3>
                   
                     <!-- Coursework Section -->
